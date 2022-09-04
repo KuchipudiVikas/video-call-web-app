@@ -1,4 +1,4 @@
-import Call from './routes/call/call.route';
+import CallPage from './routes/call/call.route';
 import { Route, Routes } from 'react-router-dom'
 import Home from './routes/Home/home.component';
 const App = () => {
@@ -6,7 +6,7 @@ const App = () => {
     <div className="App">
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/call' element={<Call />} />
+        <Route path='/call' element={<CallPage />} />
       </Routes>
     </div>
   );

@@ -1,9 +1,12 @@
-const Call = () => {
+
+import Call from "../../components/call.component";
+
+const CallPage = () => {
     return (
         <div className="">
-            staring a video call
+            <Call />
         </div>
     )
 }
 
-export default Call;
+export default CallPage;
