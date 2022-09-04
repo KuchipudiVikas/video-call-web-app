@@ -12,8 +12,8 @@ const Home = () => {
             <button onClick={signInWithGoogle}>Sign in with Google</button>
             <h1>{localStorage.getItem("name")}</h1>
             <img src={localStorage.getItem("profilepic")} />
-            <Link to={'/call'}>start a call</Link>
-            <Link to={'/call'}>join a call</Link>
+            <Link to={'/startcall'} state={{ method: "start" }}>Start A Call</Link>
+            <Link to={'/joincall'} state={{ method: "join" }}>Join Call</Link>
         </div>
     )
 }
