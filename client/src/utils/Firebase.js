@@ -21,6 +21,7 @@ export const signInWithGoogle = () => {
         const profilepic = result.user.photoURL;
         localStorage.setItem("name", name)
         localStorage.setItem("profilepic", profilepic)
+        return true
         console.log(result)
     }).catch((error) => {
         console.log(error)

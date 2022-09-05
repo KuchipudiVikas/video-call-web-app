@@ -8,7 +8,9 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/startcall' element={<StartCall />} />
-        <Route path='/joincall' element={<StartCall />} />
+        <Route path='/joincall' element={<StartCall />} >
+          <Route path=':id' element={<StartCall />} />
+        </Route>
       </Routes>
     </div>
   );

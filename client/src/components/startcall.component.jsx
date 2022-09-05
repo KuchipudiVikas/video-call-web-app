@@ -25,7 +25,8 @@ const StartCall = () => {
     const [callAccepted, setCallAccepted] = useState(false)
     const [idToCall, setIdToCall] = useState("")
     const [callEnded, setCallEnded] = useState(false)
-    const [name, setName] = useState("")
+    const userName = localStorage.getItem("name")
+    const [name, setName] = useState(userName)
     const myVideo = useRef()
     const userVideo = useRef()
     const connectionRef = useRef()
@@ -115,11 +116,11 @@ const StartCall = () => {
             <div className="container">
                 <div className="video-container">
                     <div className="video">
-                        {stream && <video playsInline muted ref={myVideo} autoPlay style={{ width: "300px" }} />}
+                        {stream && <video playsInline muted ref={myVideo} autoPlay style={{ width: "500px" }} />}
                     </div>
                     <div className="video">
                         {callAccepted && !callEnded ?
-                            <video playsInline ref={userVideo} autoPlay style={{ width: "300px" }} /> :
+                            <video playsInline ref={userVideo} autoPlay style={{ width: "500px" }} /> :
                             null}
                     </div>
                 </div>
@@ -138,6 +139,17 @@ const StartCall = () => {
                                 Copy ID
                             </Button>
                         </CopyToClipboard>
+
+                        <CopyToClipboard text={`localhost:3000/joincall/${me}`} style={{ marginBottom: "2rem" }}>
+                            <Button variant="contained" color="primary" startIcon={<AssignmentIcon fontSize="large" />}>
+                                Copy Link
+                            </Button>
+                        </CopyToClipboard>
+                        {
+                            console.log()
+                        }
+
+
                     </div>
                 ) : (request === "join") ? (
                     <div className="myId">
